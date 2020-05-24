@@ -1,20 +1,25 @@
 print ("Bienvenido al Menu Principal")
-print("Administrar Empleados =1")
-print("Administrar Cursos =2")
-print("Administrar Temas =3")
-print("Administrar Videos =4")
+print("Administrar Empleados=1")
+print("Administrar Cursos=2")
+print("Administrar Temas=3")
+print("Administrar Videos=4")
 Menu=int(input("Que opcion del MENU desea elegir: "))
 
 if Menu==1:
+    print("*"*40)
+    print("SUBMENU")
+    print("Agregar=1")
+    print("Borrar=2")
+    print("Modificar=3")
+    print("Consultar Todo=4")
     print("*"*20)
-    print("Agregar =1")
-    print("Borrar =2")
-    print("Modificar =3")
-    print("Consultar todo =4")
     opcion=int(input("Que opcion elige: "))
+
 
     if opcion==1:
         def main():
+            print("Eligio la opcion de Agregar")
+            print("*"*40)
             archivoA=open("./archivos/Empleados.txt",'a')
             idEmpleado=(input("Ingrese su numero de Empleado: "))
             nombre=(input("Ingrese su Nombre: "))
@@ -25,6 +30,8 @@ if Menu==1:
 
     elif opcion==2:
         def main2():
+            print("Eligio la opcion de Eliminar")
+            print("*"*20)
             borrar=(input("Que numero de IdEmpleado deseas borrar: "))
             archivoB=open("./archivos/Empleados.txt",'r')
             miarchivo = open("./archivos/Nuevo.txt",'x')
@@ -57,7 +64,27 @@ if Menu==1:
 
 
     elif opcion==3:
-        pass
+        def main3():
+            numero = 0
+            print("Eligió la opcion de Modificar")
+            print("*"*30)
+            numero = input("Ingrese el numero del empleado que desea modificar: ")
+            print("*"*30)
+            archivoM = open("./archivos/Empleados.txt","r")
+            lineas = archivoM.readlines()
+            archivoM.close()
+            archivoM = open("./archivos/Empleados.txt","w")
+
+            for linea in lineas:
+                if linea[0] == numero:
+                    idEmpleado = (input("Ingrese su IdEmpleado nuevo: "))
+                    nombre = (input("Ingrese su Nombre de Empleado nuevo: "))
+                    direccion = (input("Ingrese su Direccion de Empleado nuevo: "))
+                    archivoM.write(idEmpleado + "|" + nombre + "|" + direccion +"|"+ "\n")
+                else:
+                    archivoM.write(linea)
+            archivoM.close()
+        main3()
 
 
 
