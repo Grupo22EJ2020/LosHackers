@@ -85,6 +85,21 @@ if Menu==1:
                     archivoM.write(linea)
             archivoM.close()
         main3()
+    
+    elif opcion==4:
+        def main4():
+            contador=0
+            print("Eligio la opción de mostrar todos los Empleados")
+            print("*"*50)
+            archivoT = open("./archivos/Empleados.txt")
+            for linea in archivoT:
+                linea = linea.rstrip("\n")
+                contador=contador+1
+                print(f"Numero de Registros{contador}     :{linea}")
+            archivoT.close()
+        main4()
+
+
 
 
 
