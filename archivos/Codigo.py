@@ -155,6 +155,28 @@ elif Menu==2:
             remove("./archivos/Nuevo.txt")
         main2()
 
+    elif opcion==3:
+        def main3():
+            numero = 0
+            print("Eligió la opcion de Modificar")
+            print("*"*30)
+            numero = input("Ingrese el numero del idCurso que desea modificar: ")
+            print("*"*30)
+            archivoM = open("./archivos/Cursos.txt","r")
+            lineas = archivoM.readlines()
+            archivoM.close()
+            archivoM = open("./archivos/Cursos.txt","w")
+
+            for linea in lineas:
+                if linea[0] == numero:
+                    idCurso = (input("Ingrese su IdCurso nuevo: "))
+                    Descripcion = (input("Ingrese su Descripcion de Empleado nuevo: "))
+                    idempleado = (input("Ingrese su id empleado nuevo: "))
+                    archivoM.write(idCurso + "|" + Descripcion + "|" + idempleado +"|"+ "\n")
+                else:
+                    archivoM.write(linea)
+            archivoM.close()
+        main3()
 
 
 
