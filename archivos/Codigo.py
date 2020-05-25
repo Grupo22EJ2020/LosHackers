@@ -95,7 +95,7 @@ if Menu==1:
             for linea in archivoT:
                 linea = linea.rstrip("\n")
                 contador=contador+1
-                print(f"Numero de Registros{contador}     :{linea}")
+                print(f"Numero de Registro {contador}  :  {linea}")
             archivoT.close()
         main4()
 
