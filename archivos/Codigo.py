@@ -99,6 +99,28 @@ if Menu==1:
             archivoT.close()
         main4()
 
+elif Menu==2:
+    print("*"*40)
+    print("SUBMENU")
+    print("Agregar=1")
+    print("Borrar=2")
+    print("Modificar=3")
+    print("Consultar Todo=4")
+    print("*"*20)
+    opcion=int(input("Que opcion elige: "))
+
+    if opcion==1:
+        def main():
+            print("Eligio la opcion de Agregar")
+            print("*"*40)
+            archivoA=open("./archivos/Cursos.txt",'a')
+            idCurso=(input("Ingrese su numero de id curso: "))
+            Descripcion=(input("Ingrese su Descripcion: "))
+            idempleado=(input("Ingrese su id empleado: "))
+            archivoA.write(idCurso + "|"+ Descripcion + "|" + idempleado + "|" + "\n")
+            archivoA.close()
+        main()
+
 
 
 
