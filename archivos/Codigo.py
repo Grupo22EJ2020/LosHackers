@@ -191,6 +191,29 @@ elif Menu==2:
             archivoT.close()
         main4()
 
+elif Menu ==3:
+    print("*"*40)
+    print("SUBMENU")
+    print("Agregar=1")
+    print("Borrar=2")
+    print("Modificar=3")
+    print("Consultar Todo=4")
+    print("*"*20)
+    opcion=int(input("Que opcion elige: "))
+
+    if opcion==1:
+        def main():
+            print("Eligio la opcion de Agregar")
+            print("*"*40)
+            archivoA=open("./archivos/Tema.txt",'a')
+            idTema=(input("Ingrese su numero de Tema: "))
+            Nombre=(input("Ingrese su Nombre: "))
+            archivoA.write(idTema + "|"+ Nombre + "|" + "\n")
+            archivoA.close()
+        main()
+
+
+    
 
 
 
