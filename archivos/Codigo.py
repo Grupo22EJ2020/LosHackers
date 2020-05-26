@@ -3,6 +3,8 @@ print("Administrar Empleados=1")
 print("Administrar Cursos=2")
 print("Administrar Temas=3")
 print("Administrar Videos=4")
+print("Administrar de Temas asignados a un Curso")
+print("Administracion de Videos asignado a un Tema")
 Menu=int(input("Que opcion del MENU desea elegir: "))
 
 if Menu==1:
