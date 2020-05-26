@@ -480,3 +480,15 @@ elif Menu==6:
     print("Consultar Todo=4")
     print("*"*20)
     opcion=int(input("Que opcion elige: "))
+
+    if opcion==1:
+        def main():
+            print("Eligio la opcion de Agregar")
+            print("*"*40)
+            archivoA=open("./archivos/Curso_Tema_Video.txt",'a')
+            idCursoTv=(input("Ingrese su numero de Id Curso Tema Video: "))
+            idCT=(input("Ingrese su Id Curso Tema: "))
+            idVideo=(input("Ingrese su Id Video: "))
+            archivoA.write(idCursoTv + "|"+ idCT + "|" + idVideo + "|" + "\n")
+            archivoA.close()
+        main()
