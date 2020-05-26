@@ -527,3 +527,27 @@ elif Menu==6:
             remove("./archivos/Nuevo.txt")
         main2()
 
+    elif opcion==3:
+        def main3():
+            numero = 0
+            print("Eligió la opcion de Modificar")
+            print("*"*30)
+            numero = input("Ingrese el numero del Curso Tema Video que desea modificar: ")
+            print("*"*30)
+            archivoM = open("./archivos/Curso_Tema_Video.txt","r")
+            lineas = archivoM.readlines()
+            archivoM.close()
+            archivoM = open("./archivos/Curso_Tema_Video.txt","w")
+
+            for linea in lineas:
+                if linea[0] == numero:
+                    idCursoTV = (input("Ingrese su Id Curso Tema Video nuevo: "))
+                    idCT = (input("Ingrese su Id Curso Tema nuevo: "))
+                    idVideo = (input("Ingrese Id Video nuevo: "))
+                    archivoM.write(idCursoTV + "|" + idCT + "|" + idVideo +"|"+ "\n")
+                else:
+                    archivoM.write(linea)
+            archivoM.close()
+        main3()
+
+
