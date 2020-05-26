@@ -458,3 +458,17 @@ elif Menu==5:
             archivoM.close()
         main3()
 
+    elif opcion==4:
+        def main4():
+            contador=0
+            print("Eligio la opción de mostrar todos los Cursos Temas")
+            print("*"*50)
+            archivoT = open("./archivos/Curso_Tema.txt")
+            for linea in archivoT:
+                linea = linea.rstrip("\n")
+                contador=contador+1
+                print(f"Numero de Registro {contador}  :  {linea}")
+            archivoT.close()
+        main4()
+
+
