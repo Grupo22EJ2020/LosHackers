@@ -246,6 +246,30 @@ elif Menu ==3:
             remove("./archivos/Nuevo.txt")
         main2()
 
+    elif Menu==3:
+        def main3():
+            numero = 0
+            print("Eligió la opcion de Modificar")
+            print("*"*30)
+            numero = input("Ingrese el numero del Tema que desea modificar: ")
+            print("*"*30)
+            archivoM = open("./archivos/Tema.txt","r")
+            lineas = archivoM.readlines()
+            archivoM.close()
+            archivoM = open("./archivos/Tema.txt","w")
+
+            for linea in lineas:
+                if linea[0] == numero:
+                    idTema = (input("Ingrese su IdTema nuevo: "))
+                    Nombre = (input("Ingrese su Nombre del tema nuevo: "))
+                    
+                    archivoM.write(idTema + "|" + Nombre + "|" + "\n")
+                else:
+                    archivoM.write(linea)
+            archivoM.close()
+        main3()
+
+
 
     
 
