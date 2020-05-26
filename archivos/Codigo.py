@@ -3,8 +3,8 @@ print("Administrar Empleados=1")
 print("Administrar Cursos=2")
 print("Administrar Temas=3")
 print("Administrar Videos=4")
-print("Administrar de Temas asignados a un Curso")
-print("Administracion de Videos asignado a un Tema")
+print("Administrar de Temas asignados a un Curso=5")
+print("Administracion de Videos asignado a un Tema=6")
 Menu=int(input("Que opcion del MENU desea elegir: "))
 
 if Menu==1:
@@ -378,6 +378,28 @@ elif Menu == 4:
                 print(f"Numero de Registro {contador}  :  {linea}")
             archivoT.close()
         main4()
+
+elif Menu==5:
+    print("*"*40)
+    print("SUBMENU")
+    print("Agregar=1")
+    print("Borrar=2")
+    print("Modificar=3")
+    print("Consultar Todo=4")
+    print("*"*20)
+    opcion=int(input("Que opcion elige: "))
+
+    if opcion==1:
+        def main():
+            print("Eligio la opcion de Agregar")
+            print("*"*40)
+            archivoA=open("./archivos/Curso_Tema.txt",'a')
+            idCursoTe=(input("Ingrese su numero de Id Curso Tema : "))
+            idCurso=(input("Ingrese su Id Curso: "))
+            IDTema=(input("Ingrese su Id Tema: "))
+            archivoA.write(idCursoTe + "|"+ idCurso+ "|" + IDTema + "|" + "\n")
+            archivoA.close()
+        main()
 
 
 
