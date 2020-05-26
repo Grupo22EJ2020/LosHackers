@@ -292,6 +292,19 @@ elif Menu == 4:
     print("*"*20)
     opcion=int(input("Que opcion elige: "))
 
+    if opcion == 1:
+        def main():
+            print("Eligio la opcion de Agregar")
+            print("*"*40)
+            archivoA=open("./archivos/videos.txt",'a')
+            idvideos=(input("Ingrese el numero del video: "))
+            NOMBRE=(input("Ingrese el Nombre del video: "))
+            Url=(input("Ingrese el url del video: "))
+            FechaPub=(input("Ingrese la fecha publicacion del video: "))
+            archivoA.write(idvideos + "|"+ NOMBRE + "|" + Url + "|" + FechaPub + "|" + "\n")
+            archivoA.close()
+        main()
+
 
     
 
