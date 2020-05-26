@@ -340,6 +340,31 @@ elif Menu == 4:
             remove("./archivos/Nuevo.txt")
         main2()
 
+    elif opcion == 3:
+        def main3():
+            numero = 0
+            print("Eligió la opcion de Modificar")
+            print("*"*30)
+            numero = input("Ingrese el numero del video que desea modificar: ")
+            print("*"*30)
+            archivoM = open("./archivos/videos.txt","r")
+            lineas = archivoM.readlines()
+            archivoM.close()
+            archivoM = open("./archivos/videos.txt","w")
+
+            for linea in lineas:
+                if linea[0] == numero:
+                    idvideos = (input("Ingrese el idvideo nuevo: "))
+                    NOM = (input("Ingrese el nombre del video nuevo: "))
+                    Url = (input("Ingrese el url del video nuevo: "))
+                    FechaPub = (input("Ingrese la fecha de publicacion nueva: "))
+                    archivoM.write(idvideos + "|" + NOM + "|" + Url + "|" + FechaPub + "|" + "\n")
+                else:
+                    archivoM.write(linea)
+            archivoM.close()
+        main3()
+
+
 
 
     
