@@ -268,6 +268,19 @@ elif Menu ==3:
                     archivoM.write(linea)
             archivoM.close()
         main3()
+     
+    elif Menu==4:
+         def main4():
+            contador=0
+            print("Eligio la opción de mostrar todos los Temas")
+            print("*"*50)
+            archivoT = open("./archivos/Tema.txt")
+            for linea in archivoT:
+                linea = linea.rstrip("\n")
+                contador=contador+1
+                print(f"Numero de Registro {contador}  :  {linea}")
+            archivoT.close()
+        main4()
 
 
 
