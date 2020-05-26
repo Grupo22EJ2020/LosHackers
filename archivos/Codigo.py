@@ -282,6 +282,15 @@ elif Menu ==3:
             archivoT.close()
         main4()
 
+elif Menu == 4:
+    print("*"*40)
+    print("SUBMENU")
+    print("Agregar=1")
+    print("Borrar=2")
+    print("Modificar=3")
+    print("Consultar Todo=4")
+    print("*"*20)
+    opcion=int(input("Que opcion elige: "))
 
 
     
