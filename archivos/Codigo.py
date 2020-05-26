@@ -246,7 +246,7 @@ elif Menu ==3:
             remove("./archivos/Nuevo.txt")
         main2()
 
-    elif Menu==3:
+    elif opcion==3:
         def main3():
             numero = 0
             print("Eligió la opcion de Modificar")
@@ -269,7 +269,7 @@ elif Menu ==3:
             archivoM.close()
         main3()
      
-    elif Menu==4:
+    elif opcion==4:
          def main4():
             contador=0
             print("Eligio la opción de mostrar todos los Temas")
