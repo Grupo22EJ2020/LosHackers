@@ -270,7 +270,7 @@ elif Menu ==3:
         main3()
      
     elif opcion==4:
-         def main4():
+        def main4():
             contador=0
             print("Eligio la opción de mostrar todos los Temas")
             print("*"*50)
