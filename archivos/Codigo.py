@@ -305,6 +305,42 @@ elif Menu == 4:
             archivoA.close()
         main()
 
+    elif opcion == 2:
+        def main2():
+            print("Eligio la opcion de Eliminar")
+            print("*"*20)
+            borrar=(input("Que numero de idvideo deseas borrar: "))
+            archivoB=open("./archivos/videos.txt",'r')
+            miarchivo = open("./archivos/Nuevo.txt",'x')
+            miarchivo.close()
+            miarchivo = open("./archivos/Nuevo.txt",'w')
+            
+            for renglon in archivoB:
+                datosvideo = renglon.split('|')
+                idv=datosvideo[0]
+                NOM=datosvideo[1]
+                url=datosvideo[2]
+                fechaPub=datosvideo[3]
+                
+                if idv!=borrar:
+                    miarchivo.write(idv + "|"+ NOM + "|" + url + "|" + fechaPub + "|" + "\n")
+
+            archivoB.close()
+
+            from os import remove
+            remove("./archivos/videos.txt")
+
+            miarchivo= open("./archivos/Nuevo.txt","r")
+            archivodestino = open("./archivos/videos.txt","w")
+            archivodestino.write(miarchivo.read())
+            miarchivo.close()
+            archivodestino.close()
+
+            from os import remove
+            remove("./archivos/Nuevo.txt")
+        main2()
+
+
 
     
 
