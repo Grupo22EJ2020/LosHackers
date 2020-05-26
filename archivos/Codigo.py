@@ -401,6 +401,42 @@ elif Menu==5:
             archivoA.close()
         main()
 
+    elif opcion==2:
+        def main2():
+            print("Eligio la opcion de Eliminar")
+            print("*"*20)
+            borrar=(input("Que numero de Id Curso Tema deseas borrar: "))
+            archivoB=open("./archivos/Curso_Tema.txt",'r')
+            miarchivo = open("./archivos/Nuevo.txt",'x')
+            miarchivo.close()
+            miarchivo = open("./archivos/Nuevo.txt",'w')
+            
+            for renglon in archivoB:
+                datosCursoTema = renglon.split('|')
+                idCT=datosCursoTema[0]
+                IDCURSO=datosCursoTema[1]
+                IDtema=datosCursoTema[2]
+                
+                if idCT!=borrar:
+                    miarchivo.write(idCT + "|"+ IDCURSO + "|" + IDtema + "|" + "\n")
+
+            archivoB.close()
+
+            from os import remove
+            remove("./archivos/Curso_Tema.txt")
+
+            miarchivo= open("./archivos/Nuevo.txt","r")
+            archivodestino = open("./archivos/Curso_Tema.txt","w")
+            archivodestino.write(miarchivo.read())
+            miarchivo.close()
+            archivodestino.close()
+
+            from os import remove
+            remove("./archivos/Nuevo.txt")
+        main2()
+
+
+
 
 
 
